@@ -113,7 +113,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-gray-900 lg:text-4xl">
-              Yo yapeo, tú yapeas, <span className="text-[#742384]">¡todos yapeamos!</span>
+              Yo yapeo, tú yapeas, <span className="text-[#742384]">¡todos yapeamos</span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-600">
               Olvídate de ir al banco o llevar efectivo. Con Yape, puedes enviar y recibir dinero las 24 horas del día.
