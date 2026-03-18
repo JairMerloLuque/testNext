@@ -1,0 +1,728 @@
+/*IMAGENES DE SECCIONES*/
+.how-img{
+    margin-top: -550px;
+}
+
+@media (max-width: 1199px) {
+    .how-img{
+        margin-top: -450px;
+    }
+}
+@media (max-width: 991px){
+    .how-img{
+        margin-top: -680px;
+    }
+}
+@media (max-width: 575px) {
+    .how-img{
+        margin-top: -359px;
+    }
+}
+/*FIN IMAGENES SECCIONES*/
+
+.inner-header {
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.flex { /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* LISTA PERSONALIZADO*/
+/*.without-bullet,without-bullet-li{*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    list-style: none;*/
+
+/*}*/
+/*.without-bullet-li:before {*/
+/*    float: left;*/
+/*    margin-right:5px;*/
+/*}*/
+/*.star_list_ul,.star_list_li {*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    list-style: none;*/
+/*}*/
+/*.star_list_li .text-muted{*/
+/*    font-size: small;*/
+/*    color: #777;*/
+/*}*/
+/*.star_list_ul,.star_list_li p{*/
+/*    margin-bottom: 0;*/
+/*}*/
+/*.star_list_li:before {*/
+/*    content: '\f111';*/
+/*    font-family: 'FontAwesome';*/
+/*    float: left;*/
+/*    !*margin-left: 0em;*!*/
+/*    color: #0074D9;*/
+/*    margin-right:5px;*/
+/*}*/
+
+.icon_quote_right:before {
+    content: '\F10E';
+    font-family: 'FontAwesome';
+    float: left;
+    /*margin-left: 0em;*/
+    color: #0074D9;
+    margin-right:5px;
+}
+
+.icon_quote_left:before {
+    content: '\F10D';
+    font-family: 'FontAwesome';
+    float: left;
+    /*margin-left: 0em;*/
+    color: #0074D9;
+    margin-right:5px;
+}
+/*FIN LISTA*/
+
+.text-content ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.text-content .text-muted{
+    font-size: small;
+    color: #777;
+}
+.text-content p{
+    margin-bottom: 0;
+}
+/*.frontend-side {*/
+/*    background-image: url("../img/que-hacer-soli.jpg");*/
+/*}*/
+
+/*.uiux-side {*/
+/*    background-image: url("../img/que-hacer-soli2.jpg");*/
+/*}*/
+@media (max-width: 991px){
+    .uiux-side {
+        background-image:none;
+        background-color: #00c5f2 !important;
+    }
+    .frontend-side {
+        background-image:none;
+        background-color: #002d54 !important;
+
+    }
+}
+
+.split-pane {
+    padding-top: 1em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 50%;
+    min-height: 9em;
+    font-size: 2em;
+    color: white;
+    font-weight:300;
+}
+@media(min-width: 500px) {
+    .split-pane {
+        padding-top: 2em;
+        height: 100%;
+    }
+}
+.split-pane > div {
+    position: relative;
+    top: 50%;
+    /*-webkit-transform: translateY(-50%);*/
+    /*-ms-transform: translateY(-50%);*/
+    /*transform: translateY(-50%);*/
+    text-align: center;
+}
+.split-pane > div .text-content {
+    line-height: 1.6em;
+    margin-bottom: 1em;
+}
+.split-pane > div .text-content .big {
+    font-size: 1.3em;
+}
+.split-pane > div img {
+    height: 1.3em;
+}
+@media (max-width: 500px) {
+    .split-pane > div img {
+        display:none;
+    }
+}
+#split-pane-or {
+    margin-top: 180px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    margin-left: 15px;
+}
+@media (max-width: 1199px) {
+    #split-pane-or {
+        /* top: 216%; */
+        margin-top: 405px;
+        text-align: center;
+    }
+    #split-pane-or>div img {
+        height: 1.9em !important;
+    }
+}
+#split-pane-or > div img {
+    height: 2.5em;
+}
+@media (max-width: 500px) {
+    #split-pane-or {
+        position: absolute;
+        top: 50px;
+        display: none;
+    }
+    #split-pane-or > div img {
+        height:2em;
+    }
+}
+@media(min-width: 500px) {
+    #split-pane-or {
+        font-size: 3em;
+        display: none;
+    }
+}
+/*FIN VS IMAGE*/
+/*animation title*/
+@keyframes fadeInOut {
+    0% {
+        opacity:1;
+    }
+    33% {
+        opacity:0;
+    }
+    66% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.top-10{
+    top:10vh;
+}
+.top-25{
+    top: 25vh;
+}
+.top-30{
+    top: 30vh;
+}
+/*.container_image_background {*/
+/*    width: 100%;*/
+/*    height: 100vh;*/
+/*    position: absolute;*/
+/*}*/
+/*.image-1 {*/
+/*    background-image: url(../img/que-es-soli.jpg);*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    background-position: center center;*/
+/*    background-position-x: 75%;*/
+/*    !*background-position-y: 5%;*!*/
+/*}*/
+
+/*.image-2 {*/
+/*    background-image: url(../img/que-es-soli2.jpg);*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    background-position: center center;*/
+/*    background-position-x: 24%;*/
+/*    !*background-position-y: 5%;*!*/
+/*}*/
+
+/*.image-3 {*/
+/*    background-image: url(../img/que-es-soli3.jpg);*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    background-position: center center;*/
+/*    background-position-x: 75%;*/
+/*    !*background-position-y: 5%;*!*/
+/*}*/
+
+/*@keyframes bg {*/
+/*    0% {*/
+/*        background-image: url("../img/comprar-por-internet.jpg");*/
+/*        background-repeat: no-repeat;*/
+/*        background-size: cover;*/
+/*        background-position: center center;*/
+/*    }*/
+/*    33% {*/
+/*        background-image: url("../img/paga-servicios.jpg");*/
+/*        background-repeat: no-repeat;*/
+/*        background-size: cover;*/
+/*        background-position: center center;*/
+/*    }*/
+/*    66% {*/
+/*        background-image: url("../img/recarga-celular.jpg");*/
+/*        background-repeat: no-repeat;*/
+/*        background-size: cover;*/
+/*        background-position: center center;*/
+/*    }*/
+/*    100% {*/
+/*        background-image: url("../img/transferir-dinero.jpg");*/
+/*        background-repeat: no-repeat;*/
+/*        background-size: cover;*/
+/*        background-position: center center;*/
+/*    }*/
+/*}*/
+
+/*#flip {*/
+/*    height: 95px;*/
+/*    padding-top: 10px;*/
+/*    overflow:hidden;*/
+/*}*/
+/*@media (max-width: 1019px) {*/
+/*    #flip {*/
+/*        font-size: 50px;*/
+/*        height: 70px;*/
+/*    }*/
+/*    #title-animated {*/
+/*        font-size: 50px;*/
+/*    }*/
+/*}*/
+/*@media (max-width: 767px) {*/
+/*    #flip {*/
+/*        font-size: 50px;*/
+/*        height: 70px;*/
+/*    }*/
+/*    #title-animated {*/
+/*        font-size: 50px;*/
+/*    }*/
+/*}*/
+/*@media (max-width: 500px) {*/
+/*    #flip {*/
+/*        font-size: 35px;*/
+/*        height: 60px;*/
+/*    }*/
+/*    #title-animated {*/
+/*        font-size: 35px;*/
+/*    }*/
+/*    #flip>div>div {*/
+/*        padding: 5px 20px 15px 15px !important;*/
+/*        font-size: 30px;*/
+
+/*    }*/
+/*}*/
+
+/*.line-height-30{*/
+/*    line-height: 30px;*/
+/*}*/
+/*.line-height-40{*/
+/*    line-height: 40px;*/
+/*}*/
+/*.line-height-50{*/
+/*    line-height: 50px;*/
+/*}*/
+/*.line-height-60{*/
+/*    line-height: 60px;*/
+/*}*/
+/*#flip > div > div {*/
+/*    color: #fff;*/
+/*    padding: 0px 48px;*/
+/*    height: 145px;*/
+/*    margin-bottom: 30px;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*#flip div:first-child {*/
+/*    animation: show 15s linear infinite;*/
+/*}*/
+
+/*#flip div div {*/
+/*    background:#00e1fc  ;*/
+/*}*/
+/*#flip div:first-child div {*/
+/*    background:#3b60bd ;*/
+/*}*/
+/*#flip div:last-child div {*/
+/*    background:#001220 ;*/
+/*}*/
+
+/*@keyframes show {*/
+/*    0% {margin-top:-180px;}*/
+/*    5% {margin-top:-360px;}*/
+/*    33% {margin-top:-360px;}*/
+/*    38% {margin-top:-180px;}*/
+/*    66% {margin-top:-180px;}*/
+/*    71% {margin-top:0px;}*/
+/*    99.99% {margin-top:0px;}*/
+/*    100% {margin-top:-180px;}*/
+/*}*/
+
+/*fin animation tittle*/
+
+
+
+
+/*Animation phone*/
+
+.dm-width {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.iphone-mockup {
+    position: relative;
+    z-index: 5;
+}
+
+.dm-device {
+    position: relative;
+    width: 100%;
+    padding-bottom: 166.477897%;
+}
+
+.device {
+    position: absolute;
+    top: 6%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: 100% 100%;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.screen {
+    overflow: hidden;
+    z-index: 1;
+    top: 83px;
+    bottom: 101px;
+    left: 45px;
+    right: 74px;
+    width: 70%;
+    height: 88%;
+/*!* border-radius: 28px;*/
+}
+
+.slider {
+height: 100%;
+}
+.slider div {
+height: 100%;
+}
+
+.slider__item {
+font-size: 100px;
+color: rgba(255,255,255,0.7);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.slider__item--1 {
+background-image: url("../img/transferencia-qr.svg");
+background-size: contain;
+}
+.slider__item--2 {
+background-image: url("../img/transferencias-interbancarias.svg");
+background-size: cover;
+}
+.slider__item--3 {
+background-image: url("../img/compras-digitales.svg");
+background-size: cover;
+}
+.slider__item--4 {
+background-image: url("../img/pago-servicios.svg");
+background-size: cover;
+}
+.slider__item--5 {
+background-image: url("../img/recarga-credito.svg");
+background-size: cover;
+}
+.customNavigation{
+margin-top: 75px;
+}
+.ow {
+overflow-wrap: break-word;
+word-wrap: break-word;
+hyphens: auto;
+}
+.customNavigation img{
+height: 130px;
+width: 130px;
+}
+
+@media (max-width: 991px){
+.customNavigation .div_wrap{
+    text-align: center;
+}
+.customNavigation{
+    margin-left: 18%;
+    margin-bottom: 50px;
+    margin-top: -20px;
+}
+}
+@media (max-width: 683px){
+.customNavigation img{
+    height: 90px;
+    width: 90px;
+}
+
+.customNavigation{
+    margin-left: 0%;
+    margin-bottom: 50px;
+    margin-top: -100px;
+}
+}
+
+.title-functions{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+.title-functions:hover{
+    color:#10cbb4;
+    cursor: pointer;
+}
+.section-functions{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+.text-functions{
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom:26px!important;
+}
+.mr-15{
+    margin-right: 15px;
+}
+/*animation phone fin*/
+
+.holder {
+    /*flex-direction: column;*/
+    display: flex;
+}
+.text-align-list{
+    text-align: center;
+}
+.active_selection_phone{
+    color:#10cbb4 !important;
+}
+@media (max-width: 992px) {
+    .text-align-list{
+        text-align: center;
+    }
+    .holder {
+        flex-direction: column-reverse;
+    }
+}
+
+.bg-position{
+    background-position: center center;
+}
+
+/*.row-stars{*/
+
+/*    box-sizing: border-box;*/
+/*    display: flex;*/
+/*    position:relative; flex-wrap:wrap;*/
+/*    justify-content:center;*/
+/*    background: linear-gradient(to bottom,#000033,#000020);*/
+/*}*/
+/*.row-stars:after{*/
+/*    display:block;*/
+/*    content:"";*/
+/*    width:100%;*/
+/*    height:2px;*/
+/*    !*margin:auto;*!*/
+/*    !*background: linear-gradient(to right, rgba(255,255,255,0) 10%,rgba(255,255,255,.25) 50%,rgba(255,255,255,0) 90%);*!*/
+/*    position:absolute;*/
+
+/*    bottom:0;*/
+/*    left:0;*/
+/*    right:0;*/
+/*    z-index:999999;*/
+/*}*/
+
+/*.cta{*/
+/*    letter-spacing: 3px;*/
+/*    font-size: 1em;*/
+/*    cursor: pointer;*/
+/*    z-index: 9;*/
+/*}*/
+
+/*.cta:hover{*/
+
+/*transform: translateY(-2px);*/
+/*}*/
+
+
+/*#bottom-cta-bg .cta{*/
+/*position:relative;*/
+/*}*/
+
+/*#bottom-cta-bg{*/
+/*background:none;*/
+/*position:relative;*/
+/*}*/
+
+/*#bottom-cta-bg canvas{*/
+/*position:absolute;*/
+/*top:0;*/
+/*left:0;*/
+/*}*/
+
+/*.bg-emprendedor{*/
+/*    background-image: url('../img/Comercios-web2.jpg');*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    background-position: center center;*/
+/*}*/
+
+.color-dark-blue{
+    color: #003557;
+}
+
+/*.bg-security{*/
+/*    background-image: url('../img/Comercios3.jpg');*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    background-position: center center;*/
+/*}*/
+/*ul{*/
+/*    font-size: 30px;*/
+/*}*/
+.section-phone{
+    display:none;
+}
+.title_comercial{
+    font-size:40px;
+    line-height:50px;
+    margin-bottom: 1.5rem!important;
+    font-weight: 700!important;
+    color:#ffffff;
+}
+.div_title_comercial{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 26%;
+    margin-bottom: -6%;
+    margin-top: 9%;
+}
+@media screen and (max-width: 350px){
+    .section-phone h1{
+        line-height: 30px;
+        font-size: 20px!important;
+    }
+    .section-phone .phone-small-1{
+        margin-top: 80px!important;
+        line-height: 32px;
+    }
+    .section-phone .phone-small-2{
+        line-height: 20px;
+    }
+    .phone-small-font{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .title_comercial{
+        font-size:30px;
+        line-height:60px;
+        font-style: italic!important;
+        color:#ffffff;
+    }
+    .div_title_comercial{
+        margin-bottom: -25%;
+        margin-top: 15%;
+    }
+    .section-desktop{
+        display: none;
+    }
+    .section-phone{
+        display:block;
+    }
+    .font-phone{
+        color:#ffffff !important;
+    }
+    .title-phone{
+        font-size: 35px!important;
+    }
+    /*.bg-emprendedor{*/
+    /*    background-position: 88%;*/
+    /*    background-image: linear-gradient(rgb(0 0 0 / 50%),rgb(0 0 0 / 50%)),url(../img/Comercios-web2.jpg);*/
+    /*}*/
+    .bg-phone:before{
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: #000;
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+
+    }
+    .bg-phone .inner-header{
+        padding-right: 1.5rem!important;
+        padding-left: 1.5rem!important;
+    }
+    ul{
+        font-size: 20px;
+        padding-right: 1.5rem!important;
+        padding-left: 1.5rem!important;
+    }
+    .header-comercios{
+        background-position-x: 25%;
+
+
+    }
+    /*.bg-security{*/
+    /*    background-position-x: 14%;*/
+    /*    padding-left: 2rem;*/
+    /*    padding-right: 2rem;*/
+    /*    background-image: linear-gradient(rgb(0 0 0 / 50%),rgb(0 0 0 / 50%)), url(../img/Comercios3.jpg);*/
+    /*}*/
+    .bg-phone-1{
+        background-position-x: 79%;
+    }
+    .bg-phone-2{
+        background-position-x: 88%;
+    }
+    .bg-phone-3{
+        background-position-x: 77%;
+    }
+    .bg-phone-4{
+        background-position-x: 80%;
+    }
+    .font-size-phone{
+        font-size: 25px!important;
+    }
+    .text-align-phone{
+        text-align: center;
+    }
+}
+
+.color-dark-yellow{
+    color: #ffcc00;
+}
+
+.table{display:table;}
+.tr{display:table-row;}
+.td{
+    display:table-cell;
+    width:15%px;
+    height:15px;
+    text-align:center;
+    vertical-align: middle;
+}
+
+@media screen and (max-width:992px){
+    .hide_phone{
+        display: none;
+    }
+}

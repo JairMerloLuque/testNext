@@ -1,0 +1,194 @@
+    /* Click to call widget style */
+    /*body {
+      font: 80%/1.5 system-ui, sans-serif;
+      background: #76BABE;
+      color: white;
+      height: 10vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+    }*/
+
+    #main_div {
+      /*max-width: 350px;*/
+    }
+    
+    a {
+      color: #10cbb4;
+    }
+    /* Line to connection speed and quality score */
+    /* Optional. Can be hidden */
+     #c2c_quality_info_div {
+         display: none; 
+         font-size: 18px;		 
+     }
+
+    /* Widget. Contains two buttons with SVG icons and message line */
+    #c2c_widget {
+    }
+
+    /* Widget. Look for open call */
+    .c2c_widget_incall {
+        /* background-color: SpringGreen; */
+    }
+    
+    /* Widget. Look for disabled status */
+    .c2c_widget_disabled {
+        background-color: #67c404;
+    }
+
+    /* Call message line. HTML with possible styles set as argument of c2c_info() method  */
+    #c2c_message {
+        display: inline-block;
+    } 
+
+    /* Test call button and SVG icon. Optional. Can be hidden */
+    #c2c_test_btn {
+        font-size: 18px;
+        padding-top: 2px;
+        display: none; /* hide test quality gui */
+    }
+    
+    #c2c_test_svg {
+        width: 22px;
+        height: 22px;
+    }  
+
+    /* Main call button and SVG icon */
+    #c2c_call_btn {
+        padding: 7px;
+        border-radius: 50%;
+    }
+    
+    #c2c_call_svg {
+        width: 29px;
+        height: 29px;
+    }
+
+    /* Call button hangup look */
+    .c2c_call_btn_hangup {
+        background-color: #ff0209;
+        border-color: #ff0209;
+    }
+    
+    /* Call button ready look */
+    .c2c_call_btn_ready {
+        background-color: #67c404;
+        border-color: #67c404;
+    }
+
+    
+    /* Call button SVG icon can be in one of the states: */
+    .c2c_call_svg_disabled {
+        transform: rotate(-90deg);
+        fill: gray;
+    }
+    
+    .c2c_call_svg_ready {
+        transform: rotate(90deg);
+        fill: #ffffff;
+    }
+    
+    .c2c_call_svg_hangup {
+        transform: rotate(225deg);
+        fill: #ffffff;
+    }
+    
+    .c2c_call_svg_calling {
+        animation: colorChange 4s infinite linear;
+    }
+    
+    /* Call button SVG icon color animation during calling */
+    @keyframes colorChange {
+        100% {
+            fill: #99e6ff;
+        }
+        90% {
+            fill: #66d9ff;
+        }
+        80% {
+            fill: #33ccff;
+        }
+        70% {
+            fill: #00bfff;
+        }
+        60% {
+            fill: #0099cc;
+        }
+        50% {
+            fill: #007399;
+        }
+        40% {
+            fill: #004d66;
+        }
+        30% {
+            fill: #007399;
+        }
+        20% {
+            fill: #0099cc;
+        }
+        10% {
+            fill: #00bfff;
+        }
+        0% {
+            fill: #33ccff;
+        }
+    }
+
+.cw-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 20%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+.cw-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 14px;
+}
+.cw-modal-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  /* padding-right: inherit; */
+}
+.cw-modal-close:hover,
+.cw-modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.cwTest {
+    z-index: 1000;
+    position: fixed;
+    bottom: 6px;
+    right: 115px;
+}
+
+@media (max-width: 700px) {
+    #c2c_call_svg {
+        width: 30px;
+        height: 30px;
+    }
+    #c2c_call_btn {
+        padding: 7px;
+    }
+    .cwTest {
+        bottom: 12px;
+        right: 90px;
+    }
+}

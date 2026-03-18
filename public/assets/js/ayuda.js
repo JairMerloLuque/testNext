@@ -1,0 +1,1162 @@
+function lo_mas_buscado(href) {
+    location.href = href;
+    $('body').css('overflow-y', 'visible');
+    if (window.location.href.indexOf("#") > -1) {
+        document.getElementById('window-search').style.display = 'none'
+    }
+}
+
+function lo_mas_buscado_webview(href) {
+    location.href = href;
+    $('body').css('overflow-y', 'visible');
+    if (window.location.href.indexOf("#") > -1) {
+        document.getElementById('window-search').style.display = 'none'
+    }
+}
+
+
+if ($("#btn-volver").length != 0) {
+    document.getElementById("btn-volver").addEventListener("click", function () {
+        window.history.back(); // vuelve a la página anterior
+    });
+}
+
+window.onload = () => {
+    $(window).scrollTop(0);
+    if ($("#image-gallery").length != 0) {
+        $("#image-gallery img:lt(6)").show();
+        $("#gallery-btn").on('click', function (event) {
+            event.preventDefault();
+            let $hidden = $(".service_image:hidden");
+            $($hidden).slice(0, 6).fadeIn(800);
+            if ($hidden.length == 6) {
+                $(this).fadeOut();
+            }
+        });
+    }
+}
+$(document).ready(function () {
+    $('#video_deposita_desde_otro_yape').on('hidden.bs.modal', function (e) {
+        let $iframes = $(e.target).find('iframe');
+        $iframes.each(function (index, iframe) {
+            $(iframe).attr('src', $(iframe).attr('src'));
+        });
+    })
+    $('#video_deposita_desde_cajeros').on('hidden.bs.modal', function (e) {
+        let $iframes = $(e.target).find('iframe');
+        $iframes.each(function (index, iframe) {
+            $(iframe).attr('src', $(iframe).attr('src'));
+        });
+    })
+    $('#video_deposita_desde_agentes').on('hidden.bs.modal', function (e) {
+        let $iframes = $(e.target).find('iframe');
+        $iframes.each(function (index, iframe) {
+            $(iframe).attr('src', $(iframe).attr('src'));
+        });
+    })
+    $('body').css('overflow-y', 'visible');
+
+
+    if ($(".swiper-paquetes").length !== 0) {
+        let galleryThumbs = new Swiper('.swiper-title-paquetes', {
+            loop: true,
+            effect: "fade",
+            loopedSlides: 1,
+            slideToClickedSlide: true,
+            slidesPerView: 1,
+            allowTouchMove: false,
+        });
+        let galleryTop = new Swiper('.swiper-paquetes', {
+            loop: false,
+            loopedSlides: 1,
+            cssMode: true,
+            simulateTouch: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoHeight: true,
+            centeredSlides: true,
+            watchSlidesProgress: true,
+            grabCursor: "true",
+            // USING THE THUMBS COMPONENT
+            thumbs: {
+                swiper: galleryThumbs
+            }
+        });
+        galleryTop.controller.control = galleryThumbs;
+    }
+    if ($(".swiper-paquetes-tigo").length !== 0) {
+        let galleryThumbs2 = new Swiper('.swiper-title-paquetes-tigo', {
+            loop: true,
+            effect: "fade",
+            loopedSlides: 1,
+            slideToClickedSlide: true,
+            slidesPerView: 1,
+            allowTouchMove: false,
+        });
+        let galleryTop2 = new Swiper('.swiper-paquetes-tigo', {
+            loop: false,
+            loopedSlides: 1,
+            cssMode: true,
+            simulateTouch: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoHeight: true,
+            centeredSlides: true,
+            watchSlidesProgress: true,
+            grabCursor: "true",
+            // USING THE THUMBS COMPONENT
+            thumbs: {
+                swiper: galleryThumbs2
+            }
+        });
+        galleryTop2.controller.control = galleryThumbs2;
+    }
+    if ($(".swiper-paquetes-entel").length != 0) {
+        let galleryThumbs3 = new Swiper('.swiper-title-paquetes-entel', {
+            loop: true,
+            effect: "fade",
+            loopedSlides: 1,
+            slideToClickedSlide: true,
+            slidesPerView: 1,
+            allowTouchMove: false,
+        });
+        let galleryTop3 = new Swiper('.swiper-paquetes-entel', {
+            loop: false,
+            loopedSlides: 1,
+            cssMode: true,
+            simulateTouch: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoHeight: true,
+            centeredSlides: true,
+            watchSlidesProgress: true,
+            grabCursor: "true",
+            // USING THE THUMBS COMPONENT
+            thumbs: {
+                swiper: galleryThumbs3
+            }
+        });
+        galleryTop3.controller.control = galleryThumbs3;
+    }
+    if ($(".swiper-servicios").length != 0) {
+        let galleryThumbs4 = new Swiper('.swiper-title-servicios', {
+            loop: true,
+            effect: "fade",
+            loopedSlides: 1,
+            slideToClickedSlide: true,
+            slidesPerView: 1,
+            allowTouchMove: false,
+        });
+        let galleryTop4 = new Swiper('.swiper-servicios', {
+            loop: false,
+            loopedSlides: 1,
+            cssMode: true,
+            simulateTouch: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoHeight: true,
+            centeredSlides: true,
+            watchSlidesProgress: true,
+            grabCursor: "true",
+            // USING THE THUMBS COMPONENT
+            thumbs: {
+                swiper: galleryThumbs4
+            }
+        });
+        galleryTop4.controller.control = galleryThumbs4;
+    }
+    if ($(".swiper-servicios-vehiculos").length != 0) {
+        let galleryThumbsvehiculo = new Swiper('.swiper-title-servicios-vehiculos', {
+            loop: true,
+            effect: "fade",
+            loopedSlides: 1,
+            slideToClickedSlide: true,
+            slidesPerView: 1,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+        });
+        let galleryTopvehiculo = new Swiper('.swiper-servicios-vehiculos', {
+            loop: false,
+            loopedSlides: 1,
+            cssMode: true,
+            simulateTouch: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoHeight: true,
+            centeredSlides: true,
+            allowTouchMove: true,
+            grabCursor: "true",
+            // USING THE THUMBS COMPONENT
+            thumbs: {
+                swiper: galleryThumbsvehiculo
+            }
+        });
+        galleryTopvehiculo.controller.control = galleryThumbsvehiculo;
+    }
+    if ($(".swiper-servicios-impuestos-vehiculos").length != 0) {
+        let galleryThumbsImpuestosvehiculo = new Swiper('.swiper-title-servicios-impuestos-vehiculos', {
+            loop: true,
+            effect: "fade",
+            loopedSlides: 1,
+            slideToClickedSlide: true,
+            slidesPerView: 1,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+        });
+        let galleryTopImpuestosvehiculo = new Swiper('.swiper-servicios-impuestos-vehiculos', {
+            loop: false,
+            loopedSlides: 1,
+
+            cssMode: true,
+            simulateTouch: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoHeight: true,
+            centeredSlides: true,
+            allowTouchMove: true,
+            grabCursor: "true",
+            // USING THE THUMBS COMPONENT
+            thumbs: {
+                swiper: galleryThumbsImpuestosvehiculo
+            }
+        });
+        galleryTopImpuestosvehiculo.controller.control = galleryThumbsImpuestosvehiculo;
+    }
+    if ($(".swiper-servicios-inspeccion").length != 0) {
+        let galleryThumbsInspeccion = new Swiper('.swiper-title-servicios-inspeccion', {
+            loop: false,
+            effect: "fade",
+            loopedSlides: 1,
+            slideToClickedSlide: true,
+            slidesPerView: 1,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+        });
+        let galleryTopInspeccion = new Swiper('.swiper-servicios-inspeccion', {
+            loop: false,
+            loopedSlides: 1,
+            cssMode: true,
+            simulateTouch: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoHeight: true,
+            centeredSlides: true,
+            allowTouchMove: true,
+            grabCursor: "true",
+            // USING THE THUMBS COMPONENT
+            thumbs: {
+                swiper: galleryThumbsInspeccion
+            }
+        });
+        galleryTopInspeccion.controller.control = galleryThumbsInspeccion;
+    }
+
+    if ($(".swiper-yape").length != 0) {
+        let galleryThumbsYape = new Swiper('.swiper-title-yape', {
+            loop: true,
+            effect: "fade",
+            loopedSlides: 1,
+            slideToClickedSlide: true,
+            slidesPerView: 1,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+        });
+        let galleryTopYape = new Swiper('.swiper-yape', {
+            loop: false,
+            loopedSlides: 1,
+            cssMode: true,
+            simulateTouch: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoHeight: true,
+            centeredSlides: true,
+            allowTouchMove: true,
+            grabCursor: "true",
+            // USING THE THUMBS COMPONENT
+            thumbs: {
+                swiper: galleryThumbsYape
+            }
+        });
+        galleryTopYape.controller.control = galleryThumbsYape;
+    }
+
+
+    $('.pf_no').click(function () {
+        $(this).parent().parent().next().next().addClass("show_response");
+        $(this).parent().parent().addClass("hide_response");
+
+        // $(".nps_pf_container").css("display","none");
+        // $(".box-response-no").css("display","flex");
+    });
+
+    $("input[name='radio_response_no']").change(function () {
+
+        if ($("input[name='radio_response_no']").is(":checked")) {
+            if ($("input[name='radio_response_no']:checked").val() != "Otra razón")
+                $(".pf_no_fin").removeClass('disabled');
+            else
+                $(".pf_no_fin").addClass('disabled');
+        }
+    })
+
+    $('.pf_no_fin').click(function () {
+        $(this).parent().addClass("hide_response").removeClass("show_response");
+        $(this).parent().next().addClass("show_response");
+
+
+        // $(".nps_pf_container").css("display","none");
+        // $(".box-response-no").css("display","none");
+        // $(".box-response").css("display","flex");
+        $('.message-response-no').val("");
+        $(".pf_no_fin").addClass('disabled');
+        setTimeout(function () {
+            $(".box-response").css("display", "none");
+            $(".nps_pf_container").css("display", "flex");
+        }, 7000);
+    });
+
+    $('.pf_si').click(function () {
+        // if($(this).attr('id').split("resp_si_").pop() == location.href.split("#").slice(-1)[0]) {
+        $(this).parent().parent().next().addClass("show_response");
+        $(this).parent().parent().addClass("hide_response");
+        // }
+    });
+
+    $('.pf_si_fin').click(function () {
+        $(this).parent().addClass("hide_response").removeClass("show_response");
+        $(this).parent().next().next().addClass("show_response");
+
+        // $(".nps_pf_container").css("display","none");
+        // $(".box-response-si").css("display","none");
+        // $(".box-response").css("display","flex");
+        $('.message-response-si').val("");
+        $(".pf_si_fin").addClass('disabled');
+        setTimeout(function () {
+            $(".box-response").css("display", "none");
+            $(".nps_pf_container").css("display", "flex");
+        }, 7000);
+    });
+
+    $(".nest").on("click", function () {
+        if (window.innerWidth < 1199) {
+            if ($(this).next().hasClass("show")) {
+                $(this).next().removeClass("show");
+                $(this).next().slideUp(300);
+                $(this).find("div .icon_down").css({
+                    "-webkit-transform": "rotate(0deg)",
+                    "-moz-transform": "rotate(0deg)",
+                    "transform": "rotate(0deg)" /* For modern browsers(CSS3)  */
+                });
+            } else {
+                $(this).parent().parent().find("li .inner").removeClass("show");
+                $(this).parent().parent().find("li .inner").slideUp(300);
+                $(this).next().toggleClass("show");
+                $(this).next().slideToggle(300);
+                // $(this).next().find(".icon_down").filter(':after').style.transform = "rotate(180deg)";
+                $(this).find("div .icon_down").css({
+                    "-webkit-transform": "rotate(180deg)",
+                    "-moz-transform": "rotate(180deg)",
+                    "transform": "rotate(180deg)" /* For modern browsers(CSS3)  */
+                });
+            }
+        }
+    });
+
+
+    jQuery(function () {
+        let url = window.location.href;
+        element = "";
+        if (document.querySelector('#faq-tabs a.active') !== null) {
+            document.querySelector('#faq-tabs a.active').classList.remove('active');
+        }
+        jQuery("#faq-tabs a").each(function (index, value) {
+            if (url == (this.href)) {
+                jQuery(this).addClass("active");
+                element = value.attributes.href.value;
+            }
+        });
+
+        if (document.querySelector('#faq-tab-content .tab-pane.active') !== null) {
+            document.querySelector('#faq-tab-content .tab-pane.active').classList.remove('active');
+        }
+        jQuery("#faq-tab-content .tab-pane").each(function (index, value) {
+            if (element == ("#" + (value.id))) {
+                jQuery(this).addClass("active");
+            }
+        });
+    });
+
+    jQuery(function () {
+        let link = jQuery("#faq-tabs a");
+        link.on("click", function () {
+            let $this = jQuery(this);
+            let href = $this.href;
+            jQuery("a .nav-link").removeClass().addClass(href);
+            link.removeClass("active");
+            if (document.querySelector('#faq-tabs a.active') !== null) {
+                document.querySelector('#faq-tabs a.active').classList.remove('active');
+            }
+            jQuery(this).closest("a").addClass("active");
+        })
+    });
+
+    function detectMob() {
+        return ((window.innerWidth <= 997));
+    }
+
+    //scroll to element phone just in phone
+    function scrollFunction() {
+        let e = document.getElementById("phone_expo");
+        if (detectMob()) {
+            e.scrollIntoView({
+                block: 'start',
+                behavior: 'smooth',
+                inline: 'start'
+            });
+        }
+    }
+
+    let element;
+    //crear_cuenta_yape
+    if (document.getElementById("owl-tutorial-creo-cuenta") != null) {
+        let owl_tutorial_creo_cuenta = $("#owl-tutorial-creo-cuenta");
+        owl_tutorial_creo_cuenta.owlCarousel({
+            items: 1,
+            singleItem: true,
+            loop: true,
+            autoplay: true,
+            autoPlay: 100
+        })
+
+        owl_tutorial_creo_cuenta.on('changed.owl.carousel', function (e) {
+            element = document.getElementById("phone" + e.relatedTarget.relative(e.relatedTarget.current()));
+            if (element != null) {
+                if (document.querySelector('.customNavigation-creacion-cuenta .active_phone') !== null) {
+                    document.querySelector('.customNavigation-creacion-cuenta .active_phone').classList.remove('active_phone');
+                }
+                if (!(window.document.location.href.includes("centro_de_ayuda_webview")))
+                    element.classList.add("active_phone");
+            }
+        })
+
+        $('.phone0').click(function () {
+            owl_tutorial_creo_cuenta.trigger('to.owl.carousel', 0);
+            owl_tutorial_creo_cuenta.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone0");
+            if (document.querySelector('.customNavigation-creacion-cuenta .active_phone') !== null) {
+                document.querySelector('.customNavigation-creacion-cuenta .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone1').click(function () {
+            owl_tutorial_creo_cuenta.trigger('to.owl.carousel', 1);
+            owl_tutorial_creo_cuenta.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone1");
+            if (document.querySelector('.customNavigation-creacion-cuenta .active_phone') !== null) {
+                document.querySelector('.customNavigation-creacion-cuenta .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone2').click(function () {
+            owl_tutorial_creo_cuenta.trigger('to.owl.carousel', 2);
+            owl_tutorial_creo_cuenta.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone2");
+            if (document.querySelector('.customNavigation-creacion-cuenta .active_phone') !== null) {
+                document.querySelector('.customNavigation-creacion-cuenta .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone3').click(function () {
+            owl_tutorial_creo_cuenta.trigger('to.owl.carousel', 3);
+            owl_tutorial_creo_cuenta.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone3");
+            if (document.querySelector('.customNavigation-creacion-cuenta .active_phone') !== null) {
+                document.querySelector('.customNavigation-creacion-cuenta .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone4').click(function () {
+            owl_tutorial_creo_cuenta.trigger('to.owl.carousel', 4);
+            owl_tutorial_creo_cuenta.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone4");
+            if (document.querySelector('.customNavigation-creacion-cuenta.active_phone') !== null) {
+                document.querySelector('.customNavigation-creacion-cuenta .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone5').click(function () {
+            owl_tutorial_creo_cuenta.trigger('to.owl.carousel', 5);
+            owl_tutorial_creo_cuenta.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone5");
+            if (document.querySelector('.customNavigation-creacion-cuenta .active_phone') !== null) {
+                document.querySelector('.customNavigation-creacion-cuenta .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone6').click(function () {
+            owl_tutorial_creo_cuenta.trigger('to.owl.carousel', 6);
+            owl_tutorial_creo_cuenta.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone6");
+            if (document.querySelector('.customNavigation-creacion-cuenta .active_phone') !== null) {
+                document.querySelector('.customNavigation-creacion-cuenta .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+    }
+    //yapeos_celular
+    if (document.getElementById("owl-tutorial-yapeos_celular") !== null) {
+        let owl_tutorial_yapeos_celular = $("#owl-tutorial-yapeos_celular");
+        owl_tutorial_yapeos_celular.owlCarousel({
+            items: 1,
+            singleItem: true,
+            loop: true,
+            autoplay: true,
+            autoPlay: 100
+        })
+
+        owl_tutorial_yapeos_celular.on('changed.owl.carousel', function (e) {
+            element = document.getElementById("phone" + e.relatedTarget.relative(e.relatedTarget.current()));
+            if (element != null) {
+                if (document.querySelector('.customNavigation-yapeos-celular .active_phone') !== null) {
+                    document.querySelector('.customNavigation-yapeos-celular .active_phone').classList.remove('active_phone');
+                }
+                element.classList.add("active_phone");
+            }
+        })
+
+        $('.phone0').click(function () {
+            owl_tutorial_yapeos_celular.trigger('to.owl.carousel', 0);
+            owl_tutorial_yapeos_celular.trigger('stop.owl.autoplay');
+            let element = document.getElementById("phone0");
+            if (document.querySelector('.customNavigation-yapeos-celular .active_phone') !== null) {
+                document.querySelector('.customNavigation-yapeos-celular .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone1').click(function () {
+            owl_tutorial_yapeos_celular.trigger('to.owl.carousel', 1);
+            owl_tutorial_yapeos_celular.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone1");
+            if (document.querySelector('.customNavigation-yapeos-celular .active_phone') !== null) {
+                document.querySelector('.customNavigation-yapeos-celular .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone2').click(function () {
+            owl_tutorial_yapeos_celular.trigger('to.owl.carousel', 2);
+            owl_tutorial_yapeos_celular.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone2");
+            if (document.querySelector('.customNavigation-yapeos-celular .active_phone') !== null) {
+                document.querySelector('.customNavigation-yapeos-celular .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone3').click(function () {
+            owl_tutorial_yapeos_celular.trigger('to.owl.carousel', 3);
+            owl_tutorial_yapeos_celular.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone3");
+            if (document.querySelector('.customNavigation-yapeos-celular .active_phone') !== null) {
+                document.querySelector('.customNavigation-yapeos-celular .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+    }
+    //servicios
+    if (document.getElementById("owl-tutorial-servicios") !== null) {
+        let owl_tutorial = $("#owl-tutorial-servicios");
+        owl_tutorial.owlCarousel({
+            items: 1,
+            singleItem: true,
+            loop: true,
+            autoplay: true,
+            autoPlay: 100
+        })
+
+        owl_tutorial.on('changed.owl.carousel', function (e) {
+            element = document.getElementById("phone" + e.relatedTarget.relative(e.relatedTarget.current()));
+            if (element != null) {
+                if (document.querySelector('.customNavigation-servicios .active_phone') !== null) {
+                    document.querySelector('.customNavigation-servicios .active_phone').classList.remove('active_phone');
+                }
+                element.classList.add("active_phone");
+            }
+        })
+
+        $('.phone0').click(function () {
+            owl_tutorial.trigger('to.owl.carousel', 0);
+            owl_tutorial.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone0");
+            if (document.querySelector('.customNavigation-servicios .active_phone') !== null) {
+                document.querySelector('.customNavigation-servicios .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone1').click(function () {
+            owl_tutorial.trigger('to.owl.carousel', 1);
+            owl_tutorial.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone1");
+            if (document.querySelector('.customNavigation-servicios .active_phone') !== null) {
+                document.querySelector('.customNavigation-servicios .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone2').click(function () {
+            owl_tutorial.trigger('to.owl.carousel', 2);
+            owl_tutorial.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone2");
+            if (document.querySelector('.customNavigation-servicios .active_phone') !== null) {
+                document.querySelector('.customNavigation-servicios .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone3').click(function () {
+            owl_tutorial.trigger('to.owl.carousel', 3);
+            owl_tutorial.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone3");
+            if (document.querySelector('.customNavigation-servicios .active_phone') !== null) {
+                document.querySelector('.customNavigation-servicios .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone4').click(function () {
+            owl_tutorial.trigger('to.owl.carousel', 4);
+            owl_tutorial.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone4");
+            if (document.querySelector('.customNavigation-servicios .active_phone') !== null) {
+                document.querySelector('.customNavigation-servicios .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone5').click(function () {
+            owl_tutorial.trigger('to.owl.carousel', 5);
+            owl_tutorial.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone5");
+            if (document.querySelector('.customNavigation-servicios .active_phone') !== null) {
+                document.querySelector('.customNavigation-servicios .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+    }
+    //recargas-tigo
+    if (document.getElementById("owl-tutorial-tigo") !== null) {
+        let owl_tigo = $("#owl-tutorial-tigo");
+        owl_tigo.owlCarousel({
+            items: 1,
+            singleItem: true,
+            loop: true,
+            autoplay: true,
+            autoPlay: 100
+        })
+
+        owl_tigo.on('changed.owl.carousel', function (e) {
+            element = document.getElementById("phone" + e.relatedTarget.relative(e.relatedTarget.current()));
+            if (element != null) {
+                if (document.querySelector('.customNavigation-tigo .active_phone') !== null) {
+                    document.querySelector('.customNavigation-tigo .active_phone').classList.remove('active_phone');
+                }
+                element.classList.add("active_phone");
+            }
+        })
+
+        $('.phone0-tigo').click(function () {
+            owl_tigo.trigger('to.owl.carousel', 0);
+            owl_tigo.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone0-tigo");
+            if (document.querySelector('.customNavigation-tigo .active_phone') !== null) {
+                document.querySelector('.customNavigation-tigo .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone1-tigo').click(function () {
+            owl_tigo.trigger('to.owl.carousel', 1);
+            owl_tigo.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone1-tigo");
+            if (document.querySelector('.customNavigation-tigo .active_phone') !== null) {
+                document.querySelector('.customNavigation-tigo .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone2-tigo').click(function () {
+            owl_tigo.trigger('to.owl.carousel', 2);
+            owl_tigo.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone2-tigo");
+            if (document.querySelector('.customNavigation-tigo .active_phone') !== null) {
+                document.querySelector('.customNavigation-tigo .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone3-tigo').click(function () {
+            owl_tigo.trigger('to.owl.carousel', 3);
+            owl_tigo.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone3-tigo");
+            if (document.querySelector('.customNavigation-tigo .active_phone') !== null) {
+                document.querySelector('.customNavigation-tigo .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone4-tigo').click(function () {
+            owl_tigo.trigger('to.owl.carousel', 4);
+            owl_tigo.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone4-tigo");
+            if (document.querySelector('.customNavigation-tigo .active_phone') !== null) {
+                document.querySelector('.customNavigation-tigo .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone5-tigo').click(function () {
+            owl_tigo.trigger('to.owl.carousel', 5);
+            owl_tigo.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone5-tigo");
+            if (document.querySelector('.customNavigation-tigo .active_phone') !== null) {
+                document.querySelector('.customNavigation-tigo .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone6-tigo').click(function () {
+            owl_tigo.trigger('to.owl.carousel', 6);
+            owl_tigo.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone6-tigo");
+            if (document.querySelector('.customNavigation-tigo .active_phone') !== null) {
+                document.querySelector('.customNavigation-tigo .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+    }
+    //recargas-entel
+    if (document.getElementById("owl-tutorial-entel") !== null) {
+        let owl_entel = $("#owl-tutorial-entel");
+        owl_entel.owlCarousel({
+            items: 1,
+            singleItem: true,
+            loop: true,
+            autoplay: true,
+            autoPlay: 100
+        })
+
+        owl_entel.on('changed.owl.carousel', function (e) {
+            element = document.getElementById("phone" + e.relatedTarget.relative(e.relatedTarget.current()));
+            if (element != null) {
+                if (document.querySelector('.customNavigation-entel .active_phone') !== null) {
+                    document.querySelector('.customNavigation-entel .active_phone').classList.remove('active_phone');
+                }
+                element.classList.add("active_phone");
+            }
+        })
+
+        $('.phone0-entel').click(function () {
+            owl_entel.trigger('to.owl.carousel', 0);
+            owl_entel.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone0-entel");
+            if (document.querySelector('.customNavigation-entel .active_phone') !== null) {
+                document.querySelector('.customNavigation-entel .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone1-entel').click(function () {
+            owl_entel.trigger('to.owl.carousel', 1);
+            owl_entel.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone1-entel");
+            if (document.querySelector('.customNavigation-entel .active_phone') !== null) {
+                document.querySelector('.customNavigation-entel .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone2-entel').click(function () {
+            owl_entel.trigger('to.owl.carousel', 2);
+            owl_entel.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone2-entel");
+            if (document.querySelector('.customNavigation-entel .active_phone') !== null) {
+                document.querySelector('.customNavigation-entel .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone3-entel').click(function () {
+            owl_entel.trigger('to.owl.carousel', 3);
+            owl_entel.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone3-entel");
+            if (document.querySelector('.customNavigation-entel .active_phone') !== null) {
+                document.querySelector('.customNavigation-entel .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone4-entel').click(function () {
+            owl_entel.trigger('to.owl.carousel', 4);
+            owl_entel.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone4-entel");
+            if (document.querySelector('.customNavigation-entel .active_phone') !== null) {
+                document.querySelector('.customNavigation-entel .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone5-entel').click(function () {
+            owl_entel.trigger('to.owl.carousel', 5);
+            owl_entel.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone5-entel");
+            if (document.querySelector('.customNavigation-entel .active_phone') !== null) {
+                document.querySelector('.customNavigation-entel .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone6-entel').click(function () {
+            owl_entel.trigger('to.owl.carousel', 6);
+            owl_entel.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone6-entel");
+            if (document.querySelector('.customNavigation-entel .active_phone') !== null) {
+                document.querySelector('.customNavigation-entel .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+    }
+    //recargas-viva
+    if (document.getElementById("owl-tutorial-viva") !== null) {
+        let owl_viva = $("#owl-tutorial-viva");
+        owl_viva.owlCarousel({
+            items: 1,
+            singleItem: true,
+            loop: true,
+            autoplay: true,
+            autoPlay: 100
+        })
+
+        owl_viva.on('changed.owl.carousel', function (e) {
+            element = document.getElementById("phone" + e.relatedTarget.relative(e.relatedTarget.current()));
+            if (element != null) {
+                if (document.querySelector('.customNavigation-viva .active_phone') !== null) {
+                    document.querySelector('.customNavigation-viva .active_phone').classList.remove('active_phone');
+                }
+                element.classList.add("active_phone");
+            }
+        })
+
+        $('.phone0-viva').click(function () {
+            owl_viva.trigger('to.owl.carousel', 0);
+            owl_viva.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone0-viva");
+            if (document.querySelector('.customNavigation-viva .active_phone') !== null) {
+                document.querySelector('.customNavigation-viva .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone1-viva').click(function () {
+            owl_viva.trigger('to.owl.carousel', 1);
+            owl_viva.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone1-viva");
+            if (document.querySelector('.customNavigation-viva .active_phone') !== null) {
+                document.querySelector('.customNavigation-viva .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone2-viva').click(function () {
+            owl_viva.trigger('to.owl.carousel', 2);
+            owl_viva.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone2-entel");
+            if (document.querySelector('.customNavigation-viva .active_phone') !== null) {
+                document.querySelector('.customNavigation-viva .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone3-viva').click(function () {
+            owl_viva.trigger('to.owl.carousel', 3);
+            owl_viva.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone3-viva");
+            if (document.querySelector('.customNavigation-viva .active_phone') !== null) {
+                document.querySelector('.customNavigation-viva .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone4-viva').click(function () {
+            owl_viva.trigger('to.owl.carousel', 4);
+            owl_viva.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone4-viva");
+            if (document.querySelector('.customNavigation-viva .active_phone') !== null) {
+                document.querySelector('.customNavigation-viva .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone5-viva').click(function () {
+            owl_viva.trigger('to.owl.carousel', 5);
+            owl_viva.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone5-viva");
+            if (document.querySelector('.customNavigation-viva .active_phone') !== null) {
+                document.querySelector('.customNavigation-viva .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone6-viva').click(function () {
+            owl_viva.trigger('to.owl.carousel', 6);
+            owl_viva.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone6-viva");
+            if (document.querySelector('.customNavigation-viva .active_phone') !== null) {
+                document.querySelector('.customNavigation-viva .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+    }
+    //paquetes
+    if (document.getElementById("owl-tutorial-recargas") !== null) {
+        let owl_paquetes = $("#owl-tutorial-recargas");
+        owl_paquetes.owlCarousel({
+            items: 1,
+            singleItem: true,
+            loop: true,
+            autoplay: true,
+            autoPlay: 100
+        })
+
+        owl_paquetes.on('changed.owl.carousel', function (e) {
+            element = document.getElementById("phone" + e.relatedTarget.relative(e.relatedTarget.current()));
+            if (element != null) {
+                if (document.querySelector('.customNavigation-recargas .active_phone') !== null) {
+                    document.querySelector('.customNavigation-recargas .active_phone').classList.remove('active_phone');
+                }
+                element.classList.add("active_phone");
+            }
+        })
+
+        $('.phone0').click(function () {
+            owl_paquetes.trigger('to.owl.carousel', 0);
+            owl_paquetes.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone0");
+            if (document.querySelector('.customNavigation-recargas .active_phone') !== null) {
+                document.querySelector('.customNavigation-recargas .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone1').click(function () {
+            owl_paquetes.trigger('to.owl.carousel', 1);
+            owl_paquetes.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone1");
+            if (document.querySelector('.customNavigation-recargas .active_phone') !== null) {
+                document.querySelector('.customNavigation-recargas .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone2').click(function () {
+            owl_paquetes.trigger('to.owl.carousel', 2);
+            owl_paquetes.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone2");
+            if (document.querySelector('.customNavigation-recargas .active_phone') !== null) {
+                document.querySelector('.customNavigation-recargas .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone3').click(function () {
+            owl_paquetes.trigger('to.owl.carousel', 3);
+            owl_paquetes.trigger('stop.owl.autoplay');
+            element = document.getElementById("paquete_phone3");
+            if (document.querySelector('.customNavigation-recargas .active_phone') !== null) {
+                document.querySelector('.customNavigation-recargas .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+    }
+    //yapeos
+    if (document.getElementById("owl-tutorial-yapeos") !== null) {
+        let owl_yapeos = $("#owl-tutorial-yapeos");
+        owl_yapeos.owlCarousel({
+            items: 1,
+            singleItem: true,
+            loop: true,
+            autoplay: true,
+            autoPlay: 100
+        })
+
+        owl_yapeos.on('changed.owl.carousel', function (e) {
+            element = document.getElementById("phone" + e.relatedTarget.relative(e.relatedTarget.current()));
+            if (element != null) {
+                if (document.querySelector('.customNavigation-yapeos .active_phone') !== null) {
+                    document.querySelector('.customNavigation-yapeos .active_phone').classList.remove('active_phone');
+                }
+                element.classList.add("active_phone");
+            }
+        })
+
+        $('.phone0_yapeos').click(function () {
+            owl_yapeos.trigger('to.owl.carousel', 0);
+            owl_yapeos.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone0_yapeos");
+            if (document.querySelector('.customNavigation-yapeos .active_phone') !== null) {
+                document.querySelector('.customNavigation-yapeos .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone1_yapeos').click(function () {
+            owl_yapeos.trigger('to.owl.carousel', 1);
+            owl_yapeos.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone1_yapeos");
+            if (document.querySelector('.customNavigation-yapeos .active_phone') !== null) {
+                document.querySelector('.customNavigation-yapeos .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone2_yapeos').click(function () {
+            owl_yapeos.trigger('to.owl.carousel', 2);
+            owl_yapeos.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone2_yapeos");
+            if (document.querySelector('.customNavigation-yapeos .active_phone') !== null) {
+                document.querySelector('.customNavigation-yapeos .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone3_yapeos').click(function () {
+            owl_yapeos.trigger('to.owl.carousel', 3);
+            owl_yapeos.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone3_yapeos");
+            if (document.querySelector('.customNavigation-yapeos .active_phone') !== null) {
+                document.querySelector('.customNavigation-yapeos .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone4_yapeos').click(function () {
+            owl_yapeos.trigger('to.owl.carousel', 4);
+            owl_yapeos.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone4_yapeos");
+            if (document.querySelector('.customNavigation-yapeos .active_phone') !== null) {
+                document.querySelector('.customNavigation-yapeos .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+    }
+    //YAPE
+    if (document.getElementById("owl-tutorial-yape") !== null) {
+        let owl_yape = $("#owl-tutorial-yape");
+        owl_yape.owlCarousel({
+            items: 1,
+            singleItem: true,
+            loop: true,
+            autoplay: true,
+            autoPlay: 100
+        })
+
+        owl_yape.on('changed.owl.carousel', function (e) {
+            element = document.getElementById("phone" + e.relatedTarget.relative(e.relatedTarget.current()));
+            if (element != null) {
+                if (document.querySelector('.customNavigation-yape .active_phone') !== null) {
+                    document.querySelector('.customNavigation-yape .active_phone').classList.remove('active_phone');
+                }
+                element.classList.add("active_phone");
+            }
+        })
+
+        $('.phone0-yape').click(function () {
+            owl_yape.trigger('to.owl.carousel', 0);
+            owl_yape.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone0");
+            if (document.querySelector('.customNavigation-yape .active_phone') !== null) {
+                document.querySelector('.customNavigation-yape .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone1-yape').click(function () {
+            owl_yape.trigger('to.owl.carousel', 1);
+            owl_yape.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone1");
+            if (document.querySelector('.customNavigation-yape .active_phone') !== null) {
+                document.querySelector('.customNavigation-yape .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone2-yape').click(function () {
+            owl_yape.trigger('to.owl.carousel', 2);
+            owl_yape.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone2");
+            if (document.querySelector('.customNavigation-yape .active_phone') !== null) {
+                document.querySelector('.customNavigation-yape .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone3-yape').click(function () {
+            owl_yape.trigger('to.owl.carousel', 3);
+            owl_yape.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone3");
+            if (document.querySelector('.customNavigation-yape .active_phone') !== null) {
+                document.querySelector('.customNavigation-yape .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone4-yape').click(function () {
+            owl_yape.trigger('to.owl.carousel', 4);
+            owl_yape.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone4");
+            if (document.querySelector('.customNavigation-yape .active_phone') !== null) {
+                document.querySelector('.customNavigation-yape .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+        $('.phone5-yape').click(function () {
+            owl_yape.trigger('to.owl.carousel', 5);
+            owl_yape.trigger('stop.owl.autoplay');
+            element = document.getElementById("phone5");
+            if (document.querySelector('.customNavigation-yape .active_phone') !== null) {
+                document.querySelector('.customNavigation-yape .active_phone').classList.remove('active_phone');
+            }
+            element.classList.add("active_phone");
+        });
+    }
+
+    let link_tutorial = 'https://www.youtube.com/embed/_iFIy-16-_o';
+    let iframe_tutorial = document.createElement('iframe');
+    iframe_tutorial.width = "100%";
+    iframe_tutorial.height = "480px";
+    iframe_tutorial.setAttribute("src", link_tutorial);
+    if ($("#videotutorialyape").length != 0) {
+        document.getElementById("videotutorialyape").appendChild(iframe_tutorial);
+    }
+});
+

@@ -1,0 +1,132 @@
+document.addEventListener("DOMContentLoaded", async function () {
+    const params = new URLSearchParams(window.location.search);
+    if (
+        window.location.pathname === '/app/service-payments/search/recharge-package' &&
+        params.get('company') === 'tigo'
+    ) {
+        window.location.replace('https://www.yape.com.bo');
+    }
+    function getBasePath() {
+        const path = window.location.pathname;
+        const segments = path.split('/').filter(s => s.length > 0);
+        // If the last segment has a dot, it's a file (e.g., index.html), so we count directories only.
+        let depth = segments.length > 0 && segments[segments.length - 1].includes('.')
+            ? segments.length - 1
+            : segments.length;
+        if (window.location.origin === "https://www99.bancred.com.bo")
+            depth = depth - 1
+        return '../'.repeat(depth > 0 ? depth : 0);
+    }
+
+    const basePath = getBasePath();
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+
+    if (!headerPlaceholder || !footerPlaceholder) {
+        console.error('Header or footer placeholder not found. Make sure to include <div id="header-placeholder"></div> and <div id="footer-placeholder"></div> in your HTML.');
+        return;
+    }
+
+    const loadTemplate = async (url, placeholder) => {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Failed to load ${url}: ${response.statusText}`);
+            let text = await response.text();
+            // Replace relative paths for assets, handling src, href, and url() in styles.
+            // This regex looks for src, href, or url() attributes that point to 'assets/' or '../assets/'.
+            text = text.replace(/(src|href|url\()(['"])(?!https?:\/\/|\/|data:)(?:\.\.\/)*assets\//g, `$1$2${basePath}assets/`);
+            placeholder.innerHTML = text;
+        } catch (error) {
+            console.error(error);
+            placeholder.innerHTML = `<p style="color:red; text-align:center;">Failed to load content from ${url}.</p>`;
+        }
+    };
+
+    const loadScript = (url) => {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = url;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.body.appendChild(script);
+        });
+    };
+
+    try {
+        await Promise.all([
+            loadTemplate(`${basePath}templates/header.html`, headerPlaceholder),
+            loadTemplate(`${basePath}templates/footer.html`, footerPlaceholder)
+        ]);
+
+        // Now that templates are loaded, we can safely load and execute migration.js
+        const urlActual = window.location.href;
+        const path = window.location.pathname;
+        const isHomePage = path === '/' || path.split('/').filter(Boolean).length === 0;
+        const isCentroDeAyuda = path === '/centro_de_ayuda/';
+        const header = document.querySelector('.header');
+
+        const logo = document.getElementById('logo-menu');
+        const arrowProductos = document.getElementById('submenu_arrow_productos');
+        const arrowDescubreMas = document.getElementById('submenu_arrow_descubremas');
+        const busqueda_yape = document.getElementById("busqueda_yape");
+        const submenu_descarga_yape = document.getElementById("submenu-whatsapp-phone");
+        const buscador = document.getElementById('input-search');
+        if ($("#menu_ayuda").length != 0) {
+            document.getElementById("menu_ayuda").href = basePath + "centro_de_ayuda/";
+        }
+        if ($("#menu_ayuda_movil").length != 0) {
+            document.getElementById("menu_ayuda_movil").href = basePath + "centro_de_ayuda/";
+        }
+        const homeLogo = basePath + 'assets/img/Logo_Bolivia_2.svg';
+        const secondaryLogo = basePath + 'assets/img/Logo_Bolivia_3.svg';
+        const whiteArrow = basePath + 'assets/img/ic_angle_down_r_small-white.svg';
+        const purpleArrow = basePath + 'assets/img/ic_angle_down_r_small.svg';
+
+
+        const applyStyles = (isScrolled) => {
+            const isMobile = window.innerWidth < 991;
+            if (header && isHomePage) {
+                header.classList.toggle('small', isScrolled || isMobile);
+                if (logo) logo.src = (isScrolled || isMobile) ? secondaryLogo : homeLogo;
+                if (arrowProductos) arrowProductos.src = (isScrolled || isMobile) ? purpleArrow : whiteArrow;
+                if (arrowDescubreMas) arrowDescubreMas.src = (isScrolled || isMobile) ? purpleArrow : whiteArrow;
+            } else if (header) {
+                header.classList.add('small');
+                if (logo) logo.src = secondaryLogo;
+                if (arrowProductos) arrowProductos.src = purpleArrow;
+                if (arrowDescubreMas) arrowDescubreMas.src = purpleArrow;
+            }
+            if (isCentroDeAyuda) {
+                buscador.classList.add('d-none');
+            }
+            if (busqueda_yape)
+                busqueda_yape.src = basePath + 'assets/img/Logo_Bolivia_3.svg';
+            submenu_descarga_yape.src = basePath + "assets/img/whatsapp.png";
+        };
+
+        if (isHomePage) {
+            applyStyles(window.scrollY > 40);
+            window.addEventListener('scroll', () => applyStyles(window.scrollY > 40));
+            window.addEventListener('resize', () => applyStyles(window.scrollY > 40));
+        } else {
+            applyStyles(false);
+        }
+
+        await loadScript(basePath + 'assets/js/migration.js');
+        // await loadScript(basePath + 'assets/js/capturador-texto-buscador.js');
+
+        // Dispatch a custom event to signal that templates and scripts are loaded
+        const event = new Event('templatesLoaded');
+        document.dispatchEvent(event);
+
+        if (urlActual.includes("centro_de_ayuda")) {
+            const elemento = document.querySelector("#search_button");
+            if (elemento) {
+                elemento.style.display = 'none';
+            }
+        }
+    } catch (error) {
+        console.error('Error loading templates or scripts:', error);
+        console.error('Failed to load initial resources:', error);
+    }
+});
